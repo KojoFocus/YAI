@@ -1,6 +1,6 @@
 
 import LandingPage from "./components/LandingPage"
-import './App.css';
+// import './App.css';
 
 
 const App = () => {

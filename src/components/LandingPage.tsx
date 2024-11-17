@@ -12,7 +12,6 @@ const LandingPage = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   useEffect(() => {
-    // Optional: If you need to run something when the component mounts
     return () => {
       // Clean up if necessary
     };
@@ -23,10 +22,10 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between w-full m-0 p-0">
       {/* Navbar */}
       <nav className="bg-green-800 p-4">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="flex justify-between items-center w-full">
           <a href="#" className="text-white text-2xl font-bold">
             Focus Farms
           </a>
@@ -90,7 +89,7 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <section className="bg-green-600 text-white w-full py-20" id="home">
-        <div className="container mx-auto px-4 text-center">
+        <div className="w-full text-center">
           <h1 className="text-5xl font-bold mb-4">Welcome to Focus Farms</h1>
           <p className="text-xl mb-8">
             Sustainable Beekeeping Solutions for a Healthier Tomorrow.
@@ -102,72 +101,69 @@ const LandingPage = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 bg-white w-full">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-6 text-green-800">
+      <section id="about" className="py-16 bg-white w-full m-0">
+        <div className="w-full">
+          <h2 className="text-3xl font-semibold mb-6 text-green-800 text-center">
             Our Mission
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 text-center">
             Focus Farms is dedicated to promoting sustainable farming practices
             and supporting local communities through eco-friendly beekeeping.
           </p>
         </div>
       </section>
 
-      
+      {/* Services Section */}
+      <section id="services" className="bg-gray-100 py-16 w-full m-0">
+        <div className="w-full">
+          <h2 className="text-3xl font-semibold text-center text-green-800 mb-12">
+            Our Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {/* Beekeeping Training */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4 text-green-700">Beekeeping Training</h3>
+              <p className="text-gray-700">
+                We offer professional training on sustainable beekeeping practices to empower local farmers.
+              </p>
+            </div>
 
-{/* Services Section */}
-<section id="services" className="bg-gray-100 py-16 w-full">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-semibold text-center text-green-800 mb-12">
-      Our Services
-    </h2>
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-      {/* Beekeeping Training */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h3 className="text-xl font-bold mb-4 text-green-700">Beekeeping Training</h3>
-        <p className="text-gray-700">
-          We offer professional training on sustainable beekeeping practices to empower local farmers.
-        </p>
-      </div>
+            {/* Honey Production */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4 text-green-700">Honey Production</h3>
+              <p className="text-gray-700">
+                We produce eco-friendly, high-quality honey sourced from our hives and local partners.
+              </p>
+              <video
+                controls
+                className="w-full mt-4 rounded-lg"
+              >
+                <source src={productionVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
 
-      {/* Honey Production */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h3 className="text-xl font-bold mb-4 text-green-700">Honey Production</h3>
-        <p className="text-gray-700">
-          We produce eco-friendly, high-quality honey sourced from our hives and local partners.
-        </p>
-        <video
-          controls
-          className="w-full mt-4 rounded-lg"
-        >
-          <source src={productionVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      {/* Hive Management */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h3 className="text-xl font-bold mb-4 text-green-700">Hive Management</h3>
-        <p className="text-gray-700">
-          We provide expert hive management services to ensure optimal honey production and healthy bee colonies.
-        </p>
-        <video
-          controls
-          className="w-full mt-4 rounded-lg"
-        >
-          <source src={hivemanagementVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
-
+            {/* Hive Management */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4 text-green-700">Hive Management</h3>
+              <p className="text-gray-700">
+                We provide expert hive management services to ensure optimal honey production and healthy bee colonies.
+              </p>
+              <video
+                controls
+                className="w-full mt-4 rounded-lg"
+              >
+                <source src={hivemanagementVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Shop Section */}
-      <section id="shop" className="py-16 w-full">
-        <div className="container mx-auto px-4">
+      <section id="shop" className="py-16 w-full m-0">
+        <div className="w-full">
           <h2 className="text-3xl font-semibold text-center text-green-800 mb-12">
             Our Products
           </h2>
@@ -228,7 +224,7 @@ const LandingPage = () => {
                 Experience unmatched quality and freshness.
               </p>
               <p className="text-lg font-semibold text-green-800 mb-4">
-                Price: GH¢95
+                Price: GH¢100
               </p>
               <button className="bg-green-600 text-white mt-4 px-6 py-2 rounded-lg hover:bg-green-700">
                 Buy Now
@@ -239,22 +235,19 @@ const LandingPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-green-800 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
-          <p className="text-lg mb-8">
-            Get in touch to learn more about our services or start your
-            beekeeping journey today!
-          </p>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg">
-            Contact Us
+      <section id="contact" className="bg-green-800 text-white py-16 w-full m-0">
+        <div className="w-full text-center">
+          <h2 className="text-3xl font-semibold mb-4">Contact Us</h2>
+          <p className="text-xl mb-8">We'd love to hear from you!</p>
+          <button className="bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-600">
+            Get in Touch
           </button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-green-900 py-6 text-white">
-        <div className="container mx-auto px-4 text-center">
+      <footer className="bg-green-700 text-white py-4 w-full m-0">
+        <div className="w-full text-center">
           <p>&copy; 2024 Focus Farms. All Rights Reserved.</p>
         </div>
       </footer>

@@ -1,17 +1,15 @@
 // tailwind.config.js
-
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './src/**/*.{html,js,jsx,ts,tsx}', // Make sure to include JSX files
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        merriweather: ['Merriweather', 'serif'],
+      },
+    },
   },
-  plugins: [
-    require("daisyui"),
-  ],
-  daisyui: {
-    themes: ["light"],  // Enabling light and dark themes
-  }
-}
+  plugins: [require('daisyui')],
+};
